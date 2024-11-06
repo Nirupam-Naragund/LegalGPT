@@ -2,6 +2,7 @@
 documents/
 vectorstore/
 hf_model/
+.env
 
 #python env
 myvenv/

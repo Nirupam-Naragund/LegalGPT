@@ -1,53 +1,88 @@
-# Chat With PDFs
-Chat with your PDF files for free, using [Langchain](https://python.langchain.com/docs/get_started/quickstart), [Groq](https://console.groq.com/), [Chroma](https://docs.trychroma.com/getting-started) vector store, and [Jina AI](https://jina.ai/embeddings/) embeddings. This repository contains a simple Python implementation of the RAG (Retrieval-Augmented-Generation) system. The RAG model is used to retrieve relevant chunks of the user PDF file based on user queries and provide informative responses.
+# LegalGPT
 
-## Installation
-Follow these steps:
-1. Clone the repository
-   ```
-   git clone https://github.com/S4mpl3r/chat-with-pdf.git
-   ```
-2. Create a virtual environment and activate it (optional, but highly recommended).
-   ```
-   python -m venv .venv
-   Windows: .venv\Scripts\activate
-   Linux: source .venv/bin/activate
-   ```
-3. Install required packages:
-   ```
-   python -m pip install -r requirements.txt
-   ```
-4. Create a .env file in the root of the project and populate it with the following keys. You'll need to obtain your api keys:
-   ```
-   JINA_API_KEY=<YOUR KEY>
-   GROQ_API_KEY=<YOUR KEY>
-   HF_TOKEN=<YOUR TOKEN>
-   HF_HOME=<PATH TO STORE HUGGINGFACE MODEL>
-   ```
-5. Run the program:
-   ```
-   python main.py
-   ```
-## Configuration
-You can customize the behavior of the system by modifying the constants and parameters in the main.py file:
+**LegalGPT** is a specialized chatbot designed to assist users with legal queries specifically related to Indian law. It can provide legal information and answer questions focused on the Indian legal system. For non-legal or non-Indian-specific queries, it will respond with a message indicating that it is unable to assist. This ensures LegalGPT remains targeted and relevant to the legal domain in India.
 
-* EMBED_MODEL_NAME: Specify the name of the Jina embedding model to be used.
-* LLM_NAME: Specify the name of the language model (Refer to [Groq](https://groq.com/) for the list of available models).
-* LLM_TEMPERATURE: Set the temperature parameter for the language model.
-* CHUNK_SIZE: Specify the maximum chunk size allowed by the embedding model.
-* DOCUMENT_DIR: Specify the directory where PDF documents are stored.
-* VECTOR_STORE_DIR: Specify the directory where vector embeddings are stored.
-* COLLECTION_NAME: Specify the name of the collection for the chroma vector store.
+LegalGPT is built using **Mixtral**, an open-source Large Language Model (LLM) that allows it to generate accurate responses tailored to legal requirements in India.
 
-## Resources
-Kudos to the amazing libraries and services listed below:
-* [Langchain](https://www.langchain.com/)
-* [Groq](https://groq.com/)
-* [Jina AI](https://jina.ai/)
-* [ChromaDB](https://www.trychroma.com/)
+## Features
+
+- Provides answers to Indian law-related questions.
+- Restricts responses to the legal domain within India.
+- Responds with a polite disclaimer if asked questions outside its scope.
+
+## Tech Stack
+
+- **LLM**: Mixtral (Open-source)
+- **Frontend**: Streamlit (for interactive interface)
+
+## Getting Started
+
+To set up and run LegalGPT locally, follow the steps below.
+
+### Prerequisites
+
+- Python 3.8 or higher
+- Git
+
+### Setup Instructions
+
+1. **Clone the Repository**:
+
+    ```bash
+    git clone https://github.com/your-username/LegalGPT.git
+    cd LegalGPT
+    ```
+
+2. **Create a Virtual Environment**:
+
+    Create a virtual environment to keep dependencies organized.
+
+    ```bash
+    python3 -m venv legalgpt-env
+    ```
+
+3. **Activate the Virtual Environment**:
+
+    - **Windows**:
+
+      ```bash
+      legalgpt-env\Scripts\activate
+      ```
+
+    - **Mac/Linux**:
+
+      ```bash
+      source legalgpt-env/bin/activate
+      ```
+
+4. **Install Required Packages**:
+
+    Use `requirements.txt` to install all necessary dependencies.
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+5. **Set Up Environment Variables**:
+
+    Create a `.env` file in the root directory, following the format provided in `env.example`. Ensure you add any necessary API keys and configurations.
+
+6. **Run the Application**:
+
+    Start LegalGPT by running the following command:
+
+    ```bash
+    streamlit run main.py
+    ```
+
+## Usage
+
+Once the application is running, open your browser and navigate to the URL provided by Streamlit to start interacting with LegalGPT.
+
+## Contributing
+
+Contributions to LegalGPT are welcome! Feel free to submit issues or pull requests to improve the chatbot or expand its functionality.
 
 ## License
-MIT
 
-
-
+This project is licensed under the MIT License.
